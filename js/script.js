@@ -23,12 +23,13 @@ boton.addEventListener ("click",function(){
 const hideSection = (id) => {
   console.log(id)
   // document.getElementById("id").classList.add("oculto");
-  document.getElementById("elige").style.display = 'none'
+  document.getElementById(id).style.display = 'none'
 
 }
 
 const showSection = (id) => {
-  document.getElementById(id).classList.remove("oculto");
+  //document.getElementById(id).classList.remove("oculto");
+  document.getElementById(id).style.display = 'block'
 }
 
 
@@ -45,15 +46,21 @@ function artes(){
 
 
 
-
-
-
-
-
-
-// PREGUNTAS ARTE
+// RESULTADOS PREGUNTAS ARTE
 
 const resultadosArte = document.getElementById("botonArte");
+
+resutadosArte.addEventListener("click",resultArt)
+
+function resultArt(){
+  hideSection("arte");
+  showSection("enviadoArte");
+}
+
+
+
+
+// SCORE ARTES
 
 function checkArte(){
 
