@@ -78,15 +78,15 @@ resultadosArte.addEventListener("click", resultArt)
 // SCORE ARTES
 
 function checkArte(){
-  console.log("dkajkdjkawd");
-  let formulario = document.getElementById("triviaArteoo");
-  console.log(document.triviaArte);
 
-  let preguntaArte1 = document.triviaArte.preguntaArte1.value;
+  let formulario = document.forms.namedItem("trivia");
+  console.log(formulario.preguntaArte.value);
+
+  let preguntaArte1 = formulario.preguntaArte.value;
   
-	let preguntaArte2 = document.triviaArte.preguntaArte2.value;
-	let preguntaArte3 = document.triviaArte.preguntaArte3.value;
-	let correct = 0;
+	let preguntaArte2 = formulario.preguntaArte2.value;
+	let preguntaArte3 = formulario.preguntaArte3.value;
+  let correct = 0;
 
 
 	if (preguntaArte1 == "Leonardo Da Vinci") {
@@ -100,8 +100,8 @@ function checkArte(){
 	}
 
 
-	let imagenes = ["img/win.gif", "img/meh.jpeg", "img/lose.gif"];
-	let mensajes = ["¡Eres un genio!", "¡Casi lo lo logras!", "Sigue participando"];
+	let pictures = ["img/win.gif", "img/meh.jpeg", "img/lose.gif"];
+	let messages = ["¡Eres un genio!", "¡Casi lo logras!", "Sigue participando"];
 	let score;
 
 	if (correct == 0) {
@@ -119,7 +119,56 @@ function checkArte(){
   document.getElementById("enviadoArte").showSection;
 
 	document.getElementById("mensaje").innerHTML = messages[score];
-	document.getElementById("correctas").innerHTML = "You got " + correct + " correct.";
+	document.getElementById("correctas").innerHTML = "Tuviste " + correct + " correctas.";
+	document.getElementById("imagen").src = pictures[score];
+
+	
+  }
+  
+
+// SCORE CIENCIA
+
+function checkCiencia(){
+
+  let formularioCiencia = document.forms.namedItem("trivia");
+ 
+  let preguntaCiencia1 = formularioCiencia.preguntaCiencia.value;
+  
+	let preguntaCiencia2 = formularioCiencia.preguntaCiencia2.value;
+	let preguntaCiencia3 = formularioCiencia.preguntaCiencia3.value;
+  let correct = 0;
+
+	if (preguntaCiencia1 == "H2O") {
+		correct++;
+}
+	if (preguntaCiencia2 == "Branquias") {
+		correct++;
+}	
+	if (preguntaCiencia3 == "Electrones") {
+		correct++;
+	}
+
+
+	let pictures = ["img/win.gif", "img/meh.jpeg", "img/lose.gif"];
+	let messages = ["¡Eres un genio!", "¡Casi lo logras!", "Sigue participando"];
+	let score;
+
+	if (correct == 0) {
+		score = 2;
+	}
+
+	if (correct > 0 && correct < 3) {
+		score = 1;
+	}
+
+	if (correct == 3) {
+		score = 0;
+  }
+  
+  document.getElementById("enviadoCiencia").showSection;
+
+	document.getElementById("mensaje").innerHTML = messages[score];
+	document.getElementById("correctas").innerHTML = "Tuviste " + correct + " correctas.";
 	document.getElementById("imagen").src = pictures[score];
 
 	
