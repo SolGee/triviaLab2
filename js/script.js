@@ -11,9 +11,11 @@ boton.addEventListener ("click",function(){
   nombre= input.value;
   hola.innerHTML += nombre;
   elegir.style.display="block";
-  input.style.display = "none";
+  input.classList.add("oculto");
 
   document.getElementById("inicio").classList.add("oculto");
+  document.getElementById("elige").classList.add("show");
+
   document.getElementById("elige").classList.remove("oculto");
 
 });
@@ -45,26 +47,43 @@ function artes(){
 }
 
 
+// MOSTRAR SECCIÓN CIENCIA
+
+const preguntasCiencia = document.getElementById("preguntas_ciencia");
+
+preguntasCiencia.addEventListener("click",ciencia);
+
+function ciencia(){
+  hideSection("elige");
+  showSection("ciencia");
+}
+
+
 
 // RESULTADOS PREGUNTAS ARTE
 
 const resultadosArte = document.getElementById("botonArte");
 
-resutadosArte.addEventListener("click",resultArt)
+
 
 function resultArt(){
   hideSection("arte");
   showSection("enviadoArte");
 }
 
+resultadosArte.addEventListener("click", resultArt)
 
 
 
 // SCORE ARTES
 
 function checkArte(){
+  console.log("dkajkdjkawd");
+  let formulario = document.getElementById("triviaArteoo");
+  console.log(document.triviaArte);
 
-	let preguntaArte1 = document.triviaArte.preguntaArte1.value;
+  let preguntaArte1 = document.triviaArte.preguntaArte1.value;
+  
 	let preguntaArte2 = document.triviaArte.preguntaArte2.value;
 	let preguntaArte3 = document.triviaArte.preguntaArte3.value;
 	let correct = 0;
