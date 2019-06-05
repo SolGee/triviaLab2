@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id=fondo>
+    <main class="seccion1">
+        <section id="inicio" > 
+            <h1>Súper Trivia</h1>
+                <form>
+                <label for="nombre">Tu nombre:</label><br>
+                <input type="text" placeholder="" name="name" id="nombre">
+                <input type="button" id="inicia" value="Empezar">
+                </form>
+        </section>
+
+        <section id="elige" class="oculto">
+            <h2 id="bienvenida">Bienvenida </h2> 
+            <h3>Elige el tema</p>
+            <a href="#arte" id="preguntas_arte"> Arte </a>
+            <a href="#ciencia" id="preguntas_ciencia"> Ciencia </a> 
+        </section>
+        
+        
+        <section id="arte" class="oculto categorias">
+            <h2>Arte</h2>
+            <form id="triviaArte" name="trivia">
+                    <p class = "preguntasArte">¿Quién pinto la Monalisa?</p>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Leonardo Da Vinci">Leonardo Da Vinci <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Picasso"> Picasso <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Diego Rivera"> Diego Rivera <br>
+                    
+                    <p class = "preguntasArte">Conocido por la técnica del cubismo</p>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Frida Khalo">Frida Khalo<br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Picasso"> Picasso <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Dali"> Salvador Dalí <br>
+
+                    <p class = "preguntasArte">¿Quién pintó "La noche estrellada?</p>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Remedios Varo">Remedios Varo<br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Dalí"> Salvador Dalí <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Vincent van Gogh"> Vincent van Gogh <br>
+                    
+                    
+                    <input id="botonArte" type ="button" value="Enviar" onclick = "checkArte();">
+            </form>
+        </section>
+
+        <div id="enviadoArte" class="oculto">
+            <p id = "correctas"></p>
+            <p id = "mensaje"></p>
+            <img id = "imagen">
+        </div>
+
+        <section id="ciencia" class="oculto categorias">
+            <h2>Ciencia</h2>
+            <form id="triviaCiencia" name="trivia">
+                    <p class = "preguntasArte">Fórmula química del agua</p>
+                    <input type="radio" id="textbox" name="preguntaArte" value="H2O">H2O <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="CO2"> CO2 <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="H2O2"> H2O2 <br>
+                    
+                    <p class = "preguntasArte">¿Por dónde respira un pez?</p>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Piel">Piel<br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Pulmones"> Pulmones <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Branquias"> Branquias <br>
+
+                    <p class = "preguntasArte">¿Cómo se llaman las partículas subatómicas con carga eléctrica negativa?</p>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Protones">Protones<br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Electrones"> Electrones <br>
+                    <input type="radio" id="textbox" name="preguntaArte" value="Neutrones"> Neutrones <br>
+                    
+                    
+                    <input id="boton" type ="button" value="Enviar" onclick = "checkCiencia();">
+            </form>
+        </section>
+
+        <div id="enviadoCiencia" class="oculto">
+                <p id = "correctas"></p>
+                <p id = "mensaje"></p>
+                <img id = "imagen">
+        </div>
+
+    <script type?:"text/javascript" src="js/script.js"></script>
+    </main>
+
+   
+</body>
+</html>
+
+
